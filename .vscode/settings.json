@@ -3,7 +3,7 @@
     "protoc": {
         "path": "/usr/local/bin/protoc",
         "options": [
-            "--proto_path=vendor"
+            "--proto_path=vendor" // relative to grpc/
         ]
     }
 }

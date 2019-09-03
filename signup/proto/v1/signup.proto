@@ -4,14 +4,16 @@ package oswee.signup.domain.v1;
 
 // option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
 
+// import "protoc-gen-swagger/options/openapiv2.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
 // Incomming Signup request body
 message Signup {
-	// https://stackoverflow.com/a/52654286/6651080
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
         json_schema: {
-            email: "demo@example.com"
-            password: "password123"
-            display_name: "Demo User"
+            title: "Signup"
+            description: "Define a SignUp structure"
+            required: ["email", "password", "display_name"]
         }
 	};
 	

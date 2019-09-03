@@ -1,12 +1,12 @@
 syntax = "proto3";
-package oswee.signup.service.command.v1;
+package oswee.event.v1;
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
-// import "signup.proto";
+import "event.proto";
 
 // option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
 
@@ -19,11 +19,7 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 			name: "Oswee";
 			url: "https://github.com/oswee/oswee/internal/core/signup/command-gateway";
 			email: "dzintars.klavins@gmail.com";
-		};
-		license: {
-			name: "BSD 3-Clause License";
-			url: "https://github.com/oswee/api/blob/master/LICENSE.txt";
-		};
+        };
 	};
 	host: "api.oswee.com";
     schemes: HTTP;
@@ -42,8 +38,14 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	}
 };
 
-service SignupCommandService {
-    rpc Create(CreateRequest) returns (google.protobuf.Empty){
+service EventService {
+    rpc Produce(CreateRequest) returns (google.protobuf.Empty){
+		option (google.api.http) = {
+			post: "/v1/signup"
+			body: "*"
+		};
+	}
+    rpc Consume(CreateRequest) returns (google.protobuf.Empty){
 		option (google.api.http) = {
 			post: "/v1/signup"
 			body: "*"

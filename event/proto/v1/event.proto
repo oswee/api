@@ -1,0 +1,25 @@
+syntax = "proto3";
+package oswee.event.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+// Incomming Signup request body
+message Event {
+	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+        json_schema: {
+            email: "demo@example.com"
+            password: "password123"
+            display_name: "Demo User"
+        }
+	};
+	
+	string event_id = 1;
+	string event_type = 2;
+	string aggregate_id = 3;
+	string aggregate_type = 4;
+    bytes payload = 5;
+    google.protobuf.Timestamp create_time = 6;
+}

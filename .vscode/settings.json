@@ -1,9 +1,0 @@
-{
-    // https://github.com/zxh0/vscode-proto3/issues/31#issuecomment-409175121
-    "protoc": {
-        "path": "/usr/local/bin/protoc",
-        "options": [
-            "--proto_path=vendor" // relative to grpc/
-        ]
-    }
-}

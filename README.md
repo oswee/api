@@ -1,5 +1,14 @@
 # Oswee API
 
+### Importan rules
+
+- Every service in separate files
+- File names with underscore `file_name.proto`
+
+[Uber guidelines](https://github.com/uber/prototool/blob/dev/style/README.md#directory-structure)
+[Google Guidelines](https://cloud.google.com/apis/design/versioning)
+
+
 ### Prerequisites
 
 In order to compile protobufs, `/usr/local/include` should be populated with [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip).

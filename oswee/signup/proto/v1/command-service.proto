@@ -80,3 +80,13 @@ message Signup {
 	string password = 2;
 	string display_name = 3;
 }
+
+// 1. Create an emty aggregate
+// 2. Execute sequence of commands to fill the value/objects
+
+
+// CreateSignupRequest
+// - ChangeEmail -> Authorization -> Validation -> Mutation
+// - ChangePassword
+// - ChangeDisplayName
+// - SetCreateTime

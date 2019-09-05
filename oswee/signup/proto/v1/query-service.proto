@@ -1,7 +1,7 @@
 
 syntax = "proto3";
 package oswee.signup.service.query.v1;
-// option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
+option go_package = "oswee/signup/stubs/v1";
 
 // import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
@@ -10,11 +10,11 @@ import "google/api/annotations.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
 // import "github.com.oswee/api/signup/proto/v1/signup.proto";
-import "signup.proto";
+import "oswee/signup/proto/v1/signup.proto";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	info: {
-		title: "Oswee Signup Command Service API";
+		title: "Oswee Signup Query Service API";
 		version: "1.0.0";
 		description: "The greatest API ever!";
 		contact: {
@@ -41,7 +41,7 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 		value: {
 			description: "Returned when the user does not have permission to access the resource.";
 		}
-	};
+	}
     responses: {
 		key: "404";
 		value: {
@@ -53,17 +53,6 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 			}
 		}
 	};
-	responses: {
-		key: "418";
-		value: {
-			description: "I'm a teapot.";
-			schema: {
-				json_schema: {
-					ref: ".grpc.gateway.examples.examplepb.NumericEnum";
-				}
-			}
-		}
-	}
 };
 
 service SignupQueryService {

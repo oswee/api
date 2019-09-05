@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Oswee Signup Command Service API",
+    "title": "Oswee Signup Query Service API",
     "description": "The greatest API ever!",
     "version": "1.0.0",
     "contact": {
@@ -45,12 +45,6 @@
             "schema": {
               "format": "string"
             }
-          },
-          "418": {
-            "description": "I'm a teapot.",
-            "schema": {
-              "$ref": ".grpc.gateway.examples.examplepb.NumericEnum"
-            }
           }
         },
         "parameters": [
@@ -84,12 +78,6 @@
             "description": "Returned when the resource does not exist.",
             "schema": {
               "format": "string"
-            }
-          },
-          "418": {
-            "description": "I'm a teapot.",
-            "schema": {
-              "$ref": ".grpc.gateway.examples.examplepb.NumericEnum"
             }
           }
         },
@@ -158,6 +146,6 @@
   },
   "externalDocs": {
     "description": "More about Oswee",
-    "url": "https://github.com/oswee/apiy"
+    "url": "https://github.com/oswee/api"
   }
 }

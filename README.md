@@ -6,7 +6,11 @@
 - File names with underscore `file_name.proto`
 
 [Uber guidelines](https://github.com/uber/prototool/blob/dev/style/README.md#directory-structure)
+
 [Google Guidelines](https://cloud.google.com/apis/design/versioning)
+
+Tool to merge swagger files
+[go-swagger/go-swagger](https://github.com/go-swagger/go-swagger)
 
 
 ### Prerequisites
@@ -52,11 +56,17 @@ It should look like this:
 │       ├── code.proto
 │       ├── error_details.proto
 │       └── status.proto
-├── protoc-gen-swagger
-│   └── options
-│       ├── annotations.proto
-│       └── openapiv2.proto
+└── protoc-gen-swagger
+    └── options
+        ├── annotations.proto
+        └── openapiv2.proto
 ```
+
+**UPDATE:**
+In order to make this repository self-contained, i included vendored packages there and moved Oswee API in its own `/oswee/*` directory.
+This way, no matter where this repository will be hosted or used, all Google and Swagger protobufs will be included and i don't need to rely on `/usr/local/include/*`.
+
+**UPDATE2:** It is not an good idea to move `google/protobuf/*` into repository as it is a part of `protoc` compiler and could lead to mismatch between compiler and used definitions.
 
 ### Other
 
@@ -73,3 +83,7 @@ Update `protoc` compiler - [StackOverflow](https://stackoverflow.com/a/57776284/
 [GitHub Issue about imports not found](https://github.com/grpc-ecosystem/grpc-gateway/issues/574#issuecomment-376018797)
 
 [Protoc Swagger example](https://github.com/grpc-ecosystem/grpc-gateway/blob/master/examples/proto/examplepb/a_bit_of_everything.proto)
+
+### gRPC endpoint testing
+
+[fullstorydev/grpcui](https://github.com/fullstorydev/grpcui)

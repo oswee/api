@@ -1,20 +1,19 @@
 
 syntax = "proto3";
-package oswee.signup.service.query.v1;
-option go_package = "oswee/signup/stubs/v1";
+package oswee.identity.signup.v1;
+
+option go_package = "oswee/identity/signup/stubs/v1";
 
 // import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
-// import "protoc-gen-swagger/options/openapiv2.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
-// import "github.com.oswee/api/signup/proto/v1/signup.proto";
-import "oswee/signup/proto/v1/signup.proto";
+import "oswee/identity/signup/proto/v1/signup.proto";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	info: {
-		title: "Oswee Signup Query Service API";
+		title: "Oswee Signup API";
 		version: "1.0.0";
 		description: "The greatest API ever!";
 		contact: {
@@ -55,7 +54,8 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	};
 };
 
-service SignupQueryService {
+// SignupQueryAPI provides only read operations of Signup domain.
+service SignupQueryAPI {
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_tag) = {
 		description: "ABitOfEverythingService description -- which should not be used in place of the documentation comment!"
 		external_docs: {
@@ -64,19 +64,19 @@ service SignupQueryService {
 		}
 	};
 
-    rpc List(ListRequest) returns (ListResponse){
+    rpc ListSignups(ListSignupsRequest) returns (ListSignupsResponse){
 		option (google.api.http) = {
 			get: "/v1/signup"
 		};
 	}
-    rpc Get(GetRequest) returns (google.protobuf.Empty){
+    rpc GetSignup(GetSignupRequest) returns (google.protobuf.Empty){
 		option (google.api.http) = {
 			get: "/v1/signup/{id}"
 		};
 	}
 }
 
-message ListRequest {
+message ListSignupsRequest {
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
         json_schema: {
             title: "List Request"
@@ -88,7 +88,7 @@ message ListRequest {
 	string api = 1;
 }
 
-message ListResponse {
+message ListSignupsResponse {
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
         json_schema: {
             title: "List Response"
@@ -97,10 +97,10 @@ message ListResponse {
         }
 	};
 	string api = 1;
-    repeated oswee.signup.domain.v1.Signup signups = 2;
+    repeated oswee.identity.signup.v1.Signup signups = 2;
 }
 
-message GetRequest {
+message GetSignupRequest {
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
         json_schema: {
             title: "Get request"

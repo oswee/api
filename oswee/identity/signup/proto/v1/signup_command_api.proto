@@ -1,23 +1,23 @@
 syntax = "proto3";
-package oswee.signup.service.command.v1;
+package oswee.identity.signup.v1;
+
+option go_package = "oswee/identity/signup/stubs/v1";
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
 import "protoc-gen-swagger/options/annotations.proto";
 
-// import "signup.proto";
-
-// option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
+import "oswee/identity/signup/proto/v1/signup.proto";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	info: {
-		title: "Signup Command Service";
-		version: "1.0";
-		description: "Signup Command API service";
+		title: "Oswee Signup API";
+		version: "1.0.0";
+		description: "The greatest API ever!";
 		contact: {
 			name: "Oswee";
-			url: "https://github.com/oswee/oswee/internal/core/signup/command-gateway";
+			url: "https://github.com/oswee";
 			email: "dzintars.klavins@gmail.com";
 		};
 		license: {
@@ -25,10 +25,21 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 			url: "https://github.com/oswee/api/blob/master/LICENSE.txt";
 		};
 	};
+	external_docs: {
+		url: "https://github.com/oswee/api";
+		description: "More about Oswee";
+	};
 	host: "api.oswee.com";
-    schemes: HTTP;
+	schemes: HTTPS;
+	schemes: WSS;
     consumes: "application/json";
-    produces: "application/json";
+	produces: "application/json";
+	responses: {
+		key: "403";
+		value: {
+			description: "Returned when the user does not have permission to access the resource.";
+		}
+	}
     responses: {
 		key: "404";
 		value: {
@@ -39,7 +50,7 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 				}
 			}
 		}
-	}
+	};
 };
 
 service SignupCommandService {
@@ -61,32 +72,6 @@ message CreateRequest {
 	};
 
 	string api = 1;
-    // oswee.signup.domain.v1.Signup signup = 2;
-    Signup signup = 2;
+    oswee.identity.signup.v1.Signup signup = 2;
     google.protobuf.Timestamp create_time = 3;
 }
-
-message Signup {
-	// https://stackoverflow.com/a/52654286/6651080
-	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-        json_schema: {
-            title: "Signup"
-            description: "Define new SignUp request payload"
-            required: ["email", "password", "display_name"]
-        }
-	};
-	
-	string email = 1;
-	string password = 2;
-	string display_name = 3;
-}
-
-// 1. Create an emty aggregate
-// 2. Execute sequence of commands to fill the value/objects
-
-
-// CreateSignupRequest
-// - ChangeEmail -> Authorization -> Validation -> Mutation
-// - ChangePassword
-// - ChangeDisplayName
-// - SetCreateTime

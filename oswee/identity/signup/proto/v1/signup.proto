@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package oswee.signup.domain.v1;
+package oswee.identity.signup.v1;
 
 // option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
 

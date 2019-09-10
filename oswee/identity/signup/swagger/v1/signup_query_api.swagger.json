@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "Oswee Signup Query Service API",
+    "title": "Oswee Signup API",
     "description": "The greatest API ever!",
     "version": "1.0.0",
     "contact": {
@@ -28,12 +28,12 @@
   "paths": {
     "/v1/signup": {
       "get": {
-        "operationId": "List",
+        "operationId": "ListSignups",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/v1ListResponse"
+              "$ref": "#/definitions/v1ListSignupsResponse"
             }
           },
           "403": {
@@ -56,13 +56,13 @@
           }
         ],
         "tags": [
-          "SignupQueryService"
+          "SignupQueryAPI"
         ]
       }
     },
     "/v1/signup/{id}": {
       "get": {
-        "operationId": "Get",
+        "operationId": "GetSignup",
         "responses": {
           "200": {
             "description": "A successful response.",
@@ -96,13 +96,13 @@
           }
         ],
         "tags": [
-          "SignupQueryService"
+          "SignupQueryAPI"
         ]
       }
     }
   },
   "definitions": {
-    "v1ListResponse": {
+    "v1ListSignupsResponse": {
       "type": "object",
       "properties": {
         "api": {

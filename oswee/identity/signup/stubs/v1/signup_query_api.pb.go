@@ -14,7 +14,6 @@ import (
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
 	math "math"
-	v1 "oswee/identity/signup/proto/v1"
 )
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -68,11 +67,11 @@ func (m *ListSignupsRequest) GetApi() string {
 }
 
 type ListSignupsResponse struct {
-	Api                  string       `protobuf:"bytes,1,opt,name=api,proto3" json:"api,omitempty"`
-	Signups              []*v1.Signup `protobuf:"bytes,2,rep,name=signups,proto3" json:"signups,omitempty"`
-	XXX_NoUnkeyedLiteral struct{}     `json:"-"`
-	XXX_unrecognized     []byte       `json:"-"`
-	XXX_sizecache        int32        `json:"-"`
+	Api                  string    `protobuf:"bytes,1,opt,name=api,proto3" json:"api,omitempty"`
+	Signups              []*Signup `protobuf:"bytes,2,rep,name=signups,proto3" json:"signups,omitempty"`
+	XXX_NoUnkeyedLiteral struct{}  `json:"-"`
+	XXX_unrecognized     []byte    `json:"-"`
+	XXX_sizecache        int32     `json:"-"`
 }
 
 func (m *ListSignupsResponse) Reset()         { *m = ListSignupsResponse{} }
@@ -107,7 +106,7 @@ func (m *ListSignupsResponse) GetApi() string {
 	return ""
 }
 
-func (m *ListSignupsResponse) GetSignups() []*v1.Signup {
+func (m *ListSignupsResponse) GetSignups() []*Signup {
 	if m != nil {
 		return m.Signups
 	}

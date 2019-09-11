@@ -6,9 +6,6 @@ package v1
 import (
 	context "context"
 	fmt "fmt"
-	math "math"
-	v1 "oswee/identity/signup/proto/v1"
-
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -17,9 +14,8 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
+	math "math"
 )
-
-//
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal
@@ -34,7 +30,7 @@ const _ = proto.ProtoPackageIsVersion3 // please upgrade the proto package
 
 type CreateRequest struct {
 	Api                  string               `protobuf:"bytes,1,opt,name=api,proto3" json:"api,omitempty"`
-	Signup               *v1.Signup           `protobuf:"bytes,2,opt,name=signup,proto3" json:"signup,omitempty"`
+	Signup               *Signup              `protobuf:"bytes,2,opt,name=signup,proto3" json:"signup,omitempty"`
 	CreateTime           *timestamp.Timestamp `protobuf:"bytes,3,opt,name=create_time,json=createTime,proto3" json:"create_time,omitempty"`
 	XXX_NoUnkeyedLiteral struct{}             `json:"-"`
 	XXX_unrecognized     []byte               `json:"-"`
@@ -73,7 +69,7 @@ func (m *CreateRequest) GetApi() string {
 	return ""
 }
 
-func (m *CreateRequest) GetSignup() *v1.Signup {
+func (m *CreateRequest) GetSignup() *Signup {
 	if m != nil {
 		return m.Signup
 	}

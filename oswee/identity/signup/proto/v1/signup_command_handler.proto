@@ -1,0 +1,19 @@
+syntax = "proto3";
+package oswee.identity.signup.v1;
+
+option go_package = "oswee/identity/signup/stubs/v1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+import "oswee/identity/signup/proto/v1/signup.proto";
+
+service SignupCommandHandlerService {
+    rpc Publish(CreateRequest) returns (google.protobuf.Empty);
+}
+
+message CreateRequest {
+	string api = 1;
+    oswee.identity.signup.v1.Signup signup = 2;
+    google.protobuf.Timestamp create_time = 3;
+}

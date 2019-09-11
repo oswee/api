@@ -1,10 +1,7 @@
 syntax = "proto3";
-
 package oswee.identity.signup.v1;
 
 option go_package = "oswee/identity/signup/stubs/v1";
-
-// option go_package = "github.com/oswee/oswee/api/core/signup/stubs/v1";
 
 // import "protoc-gen-swagger/options/openapiv2.proto";
 import "protoc-gen-swagger/options/annotations.proto";

@@ -6,6 +6,9 @@ package v1
 import (
 	context "context"
 	fmt "fmt"
+	math "math"
+	v1 "oswee/identity/signup/proto/v1"
+
 	proto "github.com/golang/protobuf/proto"
 	empty "github.com/golang/protobuf/ptypes/empty"
 	timestamp "github.com/golang/protobuf/ptypes/timestamp"
@@ -14,9 +17,9 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	math "math"
-	v1 "oswee/identity/signup/proto/v1"
 )
+
+//
 
 // Reference imports to suppress errors if they are not otherwise used.
 var _ = proto.Marshal

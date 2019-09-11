@@ -9,10 +9,10 @@ import "google/protobuf/empty.proto";
 import "oswee/identity/signup/proto/v1/signup.proto";
 
 service SignupCommandHandlerService {
-    rpc Publish(CreateRequest) returns (google.protobuf.Empty);
+    rpc Publish(PublishRequest) returns (google.protobuf.Empty);
 }
 
-message CreateRequest {
+message PublishRequest {
 	string api = 1;
     oswee.identity.signup.v1.Signup signup = 2;
     google.protobuf.Timestamp create_time = 3;

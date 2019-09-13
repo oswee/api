@@ -1,0 +1,23 @@
+syntax = "proto3";
+package oswee.core.event.v1;
+
+option go_package = "oswee/core/event/stubs/v1";
+
+
+import "google/protobuf/timestamp.proto";
+// import "google/protobuf/empty.proto";
+// import "google/api/annotations.proto";
+// import "protoc-gen-swagger/options/annotations.proto";
+
+message Event {
+	Meta meta = 1;
+    bytes payload = 2;
+}
+
+message Meta {
+    string event_id = 1;
+	string event_type = 2;
+	string aggregate_id = 3;
+	string aggregate_type = 4;
+    google.protobuf.Timestamp create_time = 5;
+}

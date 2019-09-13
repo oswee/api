@@ -39,46 +39,16 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 };
 
 service EventService {
-    rpc Produce(CreateRequest) returns (google.protobuf.Empty){
+    rpc Produce(google.protobuf.Empty) returns (google.protobuf.Empty){
 		option (google.api.http) = {
 			post: "/v1/signup"
 			body: "*"
 		};
 	}
-    rpc Consume(CreateRequest) returns (google.protobuf.Empty){
+    rpc Consume(google.protobuf.Empty) returns (google.protobuf.Empty){
 		option (google.api.http) = {
 			post: "/v1/signup"
 			body: "*"
 		};
 	}
-}
-
-message CreateRequest {
-	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-        json_schema: {
-            title: "SignupRequest"
-            description: "Define new SignUp request"
-            required: ["api", "signup", "create_time"]
-        }
-	};
-
-	string api = 1;
-    // oswee.signup.domain.v1.Signup signup = 2;
-    Signup signup = 2;
-    google.protobuf.Timestamp create_time = 3;
-}
-
-message Signup {
-	// https://stackoverflow.com/a/52654286/6651080
-	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-        json_schema: {
-            title: "Signup"
-            description: "Define new SignUp request payload"
-            required: ["email", "password", "display_name"]
-        }
-	};
-	
-	string email = 1;
-	string password = 2;
-	string display_name = 3;
 }

@@ -15,8 +15,12 @@ message Signup {
             required: ["email", "password", "display_name"]
         }
 	};
-	
 	string email = 1;
 	string password = 2;
 	string display_name = 3;
+	Meta meta = 4;
+}
+
+message Meta {
+    bytes uuid = 1;
 }

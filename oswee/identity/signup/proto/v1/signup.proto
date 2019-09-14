@@ -5,6 +5,7 @@ option go_package = "oswee/identity/signup/stubs/v1";
 
 // import "protoc-gen-swagger/options/openapiv2.proto";
 import "protoc-gen-swagger/options/annotations.proto";
+import "google/protobuf/timestamp.proto";
 
 // Incomming Signup request body
 message Signup {
@@ -18,9 +19,21 @@ message Signup {
 	string email = 1;
 	string password = 2;
 	string display_name = 3;
-	Meta meta = 4;
 }
 
-message Meta {
+message SignupEntity {
     bytes uuid = 1;
+    string email = 2;
+	string password = 3;
+    string display_name = 4;
+    SignupEntityStatus status = 5;
+    google.protobuf.Timestamp status_time = 6;
+    google.protobuf.Timestamp create_time = 7;
+}
+
+enum SignupEntityStatus {
+    SIGNUP_ENTITY_STATUS_INVALID = 0;
+    SIGNUP_ENTITY_STATUS_UNSET = 1;
+    SIGNUP_ENTITY_STATUS_VALID = 2;
+    SIGNUP_ENTITY_STATUS_REJECTED = 3;
 }

@@ -1,0 +1,11 @@
+syntax = "proto3";
+package oswee.core.kafka.v1;
+
+option go_package = "oswee/core/kafka/stubs/v1";
+
+message Consumer {
+    string bootstrap_servers = 1;
+    string group_id = 2;
+    string topic = 3;
+    string event_type = 4;
+}

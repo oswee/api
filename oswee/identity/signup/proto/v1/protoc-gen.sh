@@ -61,3 +61,10 @@ protoc \
     --proto_path=. \
     --go_out=plugins=grpc:. \
     oswee/identity/signup/proto/v1/signup_event_handler.proto
+
+# Projection
+
+protoc \
+    --proto_path=. \
+    --go_out=plugins=grpc:. \
+    oswee/identity/signup/proto/v1/signup_projection.proto

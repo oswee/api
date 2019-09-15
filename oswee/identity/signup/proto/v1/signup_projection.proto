@@ -1,0 +1,19 @@
+syntax = "proto3";
+package oswee.identity.signup.v1;
+
+option go_package = "oswee/identity/signup/stubs/v1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+import "oswee/identity/signup/proto/v1/signup.proto";
+
+service SignupProjectionService {
+    rpc Publish(PublishRequest) returns (google.protobuf.Empty);
+}
+
+message PublishRequest {
+	string api = 1;
+    oswee.identity.signup.v1.SignupEntity signup = 2;
+    google.protobuf.Timestamp create_time = 3;
+}

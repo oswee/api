@@ -72,6 +72,6 @@ message CreateRequest {
 	};
 
 	string api = 1;
-    oswee.identity.signup.v1.Signup signup = 2;
+    			oswee.identity.signup.v1.Signup signup = 2;
     google.protobuf.Timestamp create_time = 3;
 }

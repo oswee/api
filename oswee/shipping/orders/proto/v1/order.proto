@@ -1,0 +1,40 @@
+syntax = "proto3";
+package oswee.shipping.orders.v1;
+
+option go_package = "oswee/shipping/orders/stubs/v1";
+
+// import "protoc-gen-swagger/options/openapiv2.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+import "google/protobuf/timestamp.proto";
+
+
+// Incomming Order request body
+message Order {
+	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+    json_schema: {
+      title: "Order"
+      description: "Define a Order structure"
+      required: ["email", "password", "display_name"]
+    }
+	};
+	string email = 1;
+	string password = 2;
+	string display_name = 3;
+}
+
+message OrderEntity {
+  bytes uuid = 1;
+  string email = 2;
+  string password = 3;
+  string display_name = 4;
+  OrderEntityStatus status = 5;
+  google.protobuf.Timestamp status_time = 6;
+  google.protobuf.Timestamp create_time = 7;
+}
+
+enum OrderEntityStatus {
+  ORDER_ENTITY_STATUS_INVALID = 0;
+  ORDER_ENTITY_STATUS_UNSET = 1;
+  ORDER_ENTITY_STATUS_VALID = 2;
+  ORDER_ENTITY_STATUS_REJECTED = 3;
+}

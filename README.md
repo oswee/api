@@ -1,6 +1,6 @@
 # Oswee API
 
-### Importan rules
+## Important rules
 
 - Every service in separate files
 - File names with underscore `file_name.proto`
@@ -12,12 +12,21 @@
 Tool to merge swagger files
 [go-swagger/go-swagger](https://github.com/go-swagger/go-swagger)
 
+## Prerequisites
 
-### Prerequisites
+Set up GOPATH in `~/.zshrc` or `~/bashrc`
+
+`source $HOME/.zshrc`
+
+```sh
+  1 export GOROOT=/usr/local/go
+  2 export GOPATH=$HOME/go
+  3 export GOBIN=$GOPATH/bin
+  4 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+```
 
 In order to compile protobufs, `/usr/local/include` should be populated with [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip).
 Copy `include/google/protobuf` directory from downloaded archive into `/usr/local/include/google`
-
 
 Install grpc-gateway and swagger documentation generator plugins
 
@@ -68,7 +77,7 @@ This way, no matter where this repository will be hosted or used, all Google and
 
 **UPDATE2:** It is not an good idea to move `google/protobuf/*` into repository as it is a part of `protoc` compiler and could lead to mismatch between compiler and used definitions.
 
-### Other
+## Other
 
 Check the version of protoc compiler
 
@@ -78,12 +87,12 @@ protoc --version
 
 Update `protoc` compiler - [StackOverflow](https://stackoverflow.com/a/57776284/6651080)
 
-### Resources
+## Resources
 
 [GitHub Issue about imports not found](https://github.com/grpc-ecosystem/grpc-gateway/issues/574#issuecomment-376018797)
 
 [Protoc Swagger example](https://github.com/grpc-ecosystem/grpc-gateway/blob/master/examples/proto/examplepb/a_bit_of_everything.proto)
 
-### gRPC endpoint testing
+## gRPC endpoint testing
 
 [fullstorydev/grpcui](https://github.com/fullstorydev/grpcui)

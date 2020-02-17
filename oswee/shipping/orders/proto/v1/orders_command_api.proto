@@ -1,0 +1,77 @@
+syntax = "proto3";
+package oswee.shipping.orders.v1;
+
+option go_package = "oswee/shipping/orders/stubs/v1";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+import "protoc-gen-swagger/options/annotations.proto";
+
+import "oswee/shipping/orders/proto/v1/order.proto";
+
+option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
+	info: {
+		title: "Oswee Shipping Orders API";
+		version: "0.0.1";
+		description: "The greatest API ever!";
+		contact: {
+			name: "Oswee";
+			url: "https://github.com/oswee";
+			email: "dzintars.dev@gmail.com";
+		};
+		license: {
+			name: "BSD 3-Clause License";
+			url: "https://github.com/oswee/api/blob/master/LICENSE.txt";
+		};
+	};
+	external_docs: {
+		url: "https://github.com/oswee/api";
+		description: "More about Oswee";
+	};
+	host: "api.oswee.com";
+	schemes: HTTPS;
+	schemes: WSS;
+    consumes: "application/json";
+	produces: "application/json";
+	responses: {
+		key: "403";
+		value: {
+			description: "Returned when the user does not have permission to access the resource.";
+		}
+	}
+    responses: {
+		key: "404";
+		value: {
+			description: "Returned when the resource does not exist.";
+			schema: {
+				json_schema: {
+					type: STRING;
+				}
+			}
+		}
+	};
+};
+
+service ordersCommandService {
+    rpc Create(CreateRequest) returns (google.protobuf.Empty){
+		option (google.api.http) = {
+			post: "/v1/orders"
+			body: "*"
+		};
+	}
+}
+
+message CreateRequest {
+	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
+    json_schema: {
+      title: "ordersRequest"
+      description: "Define new orders request"
+      required: ["api", "orders", "create_time"]
+    }
+	};
+
+	string api = 1;
+  oswee.shipping.orders.v1.Order orders = 2;
+  google.protobuf.Timestamp create_time = 3;
+}

@@ -31,11 +31,16 @@ Copy `include/google/protobuf` directory from downloaded archive into `/usr/loca
 Install grpc-gateway and swagger documentation generator plugins
 
 ```sh
+go get -u github.com/golang/protobuf/protoc-gen-go
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-grpc-gateway
 go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 ```
 
+By default `go get` installs all packages in `$GOPATH`. If that is not specified then in `$HOME/go`.
+
 Copy content of `%GOPATH%/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google` folder to `/usr/local/include/google` folder.
+
+`cp $GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google usr/local/include/google`
 
 Copy `annotations.proto` and `openapiv2.proto` files from `%GOPATH%/src/github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger/options` folder to `/usr/local/include/protoc-gen-swagger/options` folder.
 

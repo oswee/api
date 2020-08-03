@@ -5,7 +5,7 @@ option go_package = "oswee/module/stubs/v1";
 
 // import "protoc-gen-swagger/options/openapiv2.proto";
 // import "protoc-gen-swagger/options/annotations.proto";
-// import "google/protobuf/timestamp.proto";
+import "google/protobuf/timestamp.proto";
 
 // Incomming Signup request body
 message Module {
@@ -27,6 +27,8 @@ message SignupEntity {
 	string password = 3;
   string display_name = 4;
   SignupEntityStatus status = 5;
+  google.protobuf.Timestamp create_time = 7;
+
 }
 
 enum SignupEntityStatus {

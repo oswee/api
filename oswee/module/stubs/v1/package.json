@@ -2,7 +2,7 @@
   "private": false,
   "name": "@oswee/test-npm-private-package",
   "description": "Testing NPM publishing",
-  "version": "0.0.0",
+  "version": "0.4.0",
   "author": "Dzintars Klavins",
   "homepage": "https://github.com/oswee/api/tree/master/oswee/module/stubs/v1#readme",
   "license": "MIT",

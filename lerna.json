@@ -1,8 +1,8 @@
 {
   "packages": [
-    "oswee/module/stubs/*"
+    "oswee/*"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "independent"
+  "version": "0.0.0"
 }

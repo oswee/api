@@ -16,7 +16,7 @@
     "icon"
   ],
   "publishConfig": {
-    "access": "restricted",
+    "access": "public",
     "registry":"https://npm.pkg.github.com/"
   },
   "repository": {
@@ -25,7 +25,7 @@
     "directory": "oswee/module/stubs/v1"
   },
   "bugs": {
-    "url": "https://github.com/dzintars/monorepo/issues",
+    "url": "https://github.com/oswee/api/issues",
     "email": "dzintars.dev@gmail.com"
   }
 }

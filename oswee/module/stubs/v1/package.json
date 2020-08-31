@@ -1,0 +1,31 @@
+{
+  "private": true,
+  "name": "@api/module",
+  "description": "Testing NPM publishing",
+  "version": "0.0.1",
+  "author": "Dzintars Klavins",
+  "homepage": "https://github.com/oswee/api/tree/master/oswee/module/stubs/v1#readme",
+  "license": "MIT",
+  "type": "module",
+  "main": "module_pb.js",
+  "types": "module_pb.d.ts",
+  "keywords": [
+    "web component",
+    "lit-element",
+    "typescript",
+    "icon"
+  ],
+  "publishConfig": {
+    "access": "restricted",
+    "registry":"https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/oswee/api.git",
+    "directory": "oswee/module/stubs/v1"
+  },
+  "bugs": {
+    "url": "https://github.com/dzintars/monorepo/issues",
+    "email": "dzintars.dev@gmail.com"
+  }
+}

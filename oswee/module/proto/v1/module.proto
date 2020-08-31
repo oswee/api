@@ -5,9 +5,19 @@ option go_package = "oswee/module/stubs/v1";
 
 // import "protoc-gen-swagger/options/openapiv2.proto";
 // import "protoc-gen-swagger/options/annotations.proto";
-import "google/protobuf/timestamp.proto";
+// import "google/protobuf/timestamp.proto";
 
-// Incomming Signup request body
+// // Module is an application module
+// type Module struct {
+// 	ID        string `json:"id,omitempty"`
+// 	Title     string `json:"title,omitempty"`
+// 	Permalink string `json:"permalink,omitempty"`
+// }
+
+// type ListModulesRequestPayload struct {
+// 	ID string `json:"id,omitempty"`
+// }
+
 message Module {
 	// option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
   //   json_schema: {
@@ -16,24 +26,7 @@ message Module {
   //     required: ["email", "password", "display_name"]
   //   }
 	// };
-	string email = 1;
-	string password = 2;
-	string display_name = 3;
-}
-
-message SignupEntity {
-  bytes uuid = 1;
-  string email = 2;
-	string password = 3;
-  string display_name = 4;
-  SignupEntityStatus status = 5;
-  google.protobuf.Timestamp create_time = 7;
-
-}
-
-enum SignupEntityStatus {
-  SIGNUP_ENTITY_STATUS_INVALID = 0;
-  SIGNUP_ENTITY_STATUS_UNSET = 1;
-  SIGNUP_ENTITY_STATUS_VALID = 2;
-  SIGNUP_ENTITY_STATUS_REJECTED = 3;
+	string id = 1;
+	string title = 2;
+	string permalink = 3;
 }

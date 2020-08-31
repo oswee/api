@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "oswee/*"
+  ],
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "version": "independent"
+}

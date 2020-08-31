@@ -1,5 +1,7 @@
 # Oswee API
 
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+
 ## Important rules
 
 - Every service in separate files

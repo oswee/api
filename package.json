@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "private": true,
+  "workspaces": [
+    "oswee/*"
+  ],
+  "scripts": {
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "clean": "lerna run clean",
+    "build": "lerna run build",
+    "pub": "lerna publish"
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
+  }
+}

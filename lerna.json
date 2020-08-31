@@ -12,6 +12,7 @@
       ]
     },
     "publish": {
+      "registry": "https://npm.pkg.github.com",
       "conventionalCommits": true,
       "ignoreChanges": [
         ".prettierrc",

@@ -8,9 +8,11 @@
     "bootstrap": "lerna bootstrap --use-workspaces",
     "clean": "lerna run clean",
     "build": "lerna run build",
-    "pub": "lerna publish"
+    "pub": "lerna publish",
+    "version": "lerna version"
   },
   "devDependencies": {
     "lerna": "^3.22.1"
-  }
+  },
+  "version": "0.0.1"
 }

@@ -6,10 +6,8 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "clean": "lerna run clean",
-    "build": "lerna run build",
-    "pub": "lerna publish",
-    "version": "lerna version"
+    "clean": "lerna clean",
+    "pub": "lerna publish"
   },
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",

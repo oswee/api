@@ -1,3 +1,3 @@
 # Module
 
-Test typings package
+Test typings package 2

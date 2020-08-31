@@ -20,14 +20,6 @@ dist/
 node_modules/
 bower_components/
 
-# IDE specific (Eclipse)
-.classpath
-.project
-.settings
-
-# IDE specific (Netbeans)
-nbproject
-
 # IDE specific (Visual Studio Code)
 # .vscode
 

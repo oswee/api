@@ -12,6 +12,9 @@ export class Module extends jspb.Message {
   getPermalink(): string;
   setPermalink(value: string): Module;
 
+  getField(): string;
+  setField(value: string): Module;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): Module.AsObject;
   static toObject(includeInstance: boolean, msg: Module): Module.AsObject;
@@ -25,6 +28,7 @@ export namespace Module {
     id: string,
     title: string,
     permalink: string,
+    field: string,
   }
 }
 

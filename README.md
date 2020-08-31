@@ -103,3 +103,20 @@ Update `protoc` compiler - [StackOverflow](https://stackoverflow.com/a/57776284/
 ## gRPC endpoint testing
 
 [fullstorydev/grpcui](https://github.com/fullstorydev/grpcui)
+
+## Lerna
+
+Create personal access token
+
+https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
+
+Create `~/.npmrc` (or at project level) file with Auth token
+
+https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-with-a-personal-access-token
+
+Check the authentication
+
+```sh
+npm whoami --registry=https://npm.pkg.github.com
+```
+

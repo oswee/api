@@ -68,7 +68,8 @@ proto.oswee.module.v1.Module.toObject = function(includeInstance, msg) {
   var f, obj = {
     id: jspb.Message.getFieldWithDefault(msg, 1, ""),
     title: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    permalink: jspb.Message.getFieldWithDefault(msg, 3, "")
+    permalink: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    field: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -117,6 +118,10 @@ proto.oswee.module.v1.Module.deserializeBinaryFromReader = function(msg, reader)
       var value = /** @type {string} */ (reader.readString());
       msg.setPermalink(value);
       break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setField(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -164,6 +169,13 @@ proto.oswee.module.v1.Module.serializeBinaryToWriter = function(message, writer)
   if (f.length > 0) {
     writer.writeString(
       3,
+      f
+    );
+  }
+  f = message.getField();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
       f
     );
   }
@@ -221,6 +233,24 @@ proto.oswee.module.v1.Module.prototype.getPermalink = function() {
  */
 proto.oswee.module.v1.Module.prototype.setPermalink = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string field = 4;
+ * @return {string}
+ */
+proto.oswee.module.v1.Module.prototype.getField = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.oswee.module.v1.Module} returns this
+ */
+proto.oswee.module.v1.Module.prototype.setField = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

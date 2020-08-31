@@ -16,8 +16,6 @@
       "conventionalCommits": true,
       "ignoreChanges": [
         ".prettierrc",
-        "appveyor.yml",
-        "gulpfile.js",
         ".gitignore",
         "CODEOWNERS",
         "*.md",

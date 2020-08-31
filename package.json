@@ -12,6 +12,8 @@
     "version": "lerna version"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^9.1.2",
+    "commitlint": "^9.1.2",
     "lerna": "^3.22.1"
   },
   "version": "independent"

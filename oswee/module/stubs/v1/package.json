@@ -1,6 +1,6 @@
 {
   "private": false,
-  "name": "@dzintars/npm",
+  "name": "@dzintars/npm-test-pkg",
   "description": "Testing NPM publishing",
   "version": "0.0.7",
   "author": "Dzintars Klavins",

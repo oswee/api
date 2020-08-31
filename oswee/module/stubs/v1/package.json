@@ -2,7 +2,7 @@
   "private": false,
   "name": "@oswee/test-npm-private-package",
   "description": "Testing NPM publishing",
-  "version": "0.0.6",
+  "version": "0.0.5",
   "author": "Dzintars Klavins",
   "homepage": "https://github.com/oswee/api/tree/master/oswee/module/stubs/v1#readme",
   "license": "MIT",
@@ -15,13 +15,7 @@
     "typescript",
     "icon"
   ],
-  "scripts": {
-    "build": "yarn run clean && yarn run compile",
-    "build:watch": "tsc --watch",
-    "clean": "rm -rf ./dist && rm -rf .tsbuildinfo",
-    "compile": "tsc -b ./tsconfig.json",
-    "prepublishOnly": "yarn run build"
-  },
+
   "publishConfig": {
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"

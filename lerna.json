@@ -4,5 +4,16 @@
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "version": "0.0.7"
+  "version": "0.0.8",
+  "command": {
+    "bootstrap": {
+      "npmClientArgs": ["--no-package-lock"]
+    },
+    "publish": {
+      "conventionalCommits": true,
+      "ignoreChanges": [".prettierrc", "appveyor.yml", "gulpfile.js", ".gitignore", "CODEOWNERS", "*.md", "tslint.json"],
+      "message": "chore(release): publish"
+    }
+  },
+  "stream": true
 }

@@ -119,4 +119,3 @@ Check the authentication
 ```sh
 npm whoami --registry=https://npm.pkg.github.com
 ```
-

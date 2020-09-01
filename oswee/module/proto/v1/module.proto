@@ -7,13 +7,6 @@ option go_package = "oswee/module/stubs/v1";
 // import "protoc-gen-swagger/options/annotations.proto";
 // import "google/protobuf/timestamp.proto";
 
-// // Module is an application module
-// type Module struct {
-// 	ID        string `json:"id,omitempty"`
-// 	Title     string `json:"title,omitempty"`
-// 	Permalink string `json:"permalink,omitempty"`
-// }
-
 // type ListModulesRequestPayload struct {
 // 	ID string `json:"id,omitempty"`
 // }
@@ -29,5 +22,19 @@ message Module {
 	string id = 1;
 	string title = 2;
   string permalink = 3;
-  string field = 4;
+}
+
+message ListModulesRequest {
+  string parent = 1;
+}
+
+message ListModulesResponse {
+  repeated Module modules = 1;
+}
+
+message Envelope {
+  oneof kind {
+    ListModulesRequest a = 1;
+    ListModulesResponse b = 2;
+  }
 }

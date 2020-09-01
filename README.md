@@ -104,13 +104,18 @@ Update `protoc` compiler - [StackOverflow](https://stackoverflow.com/a/57776284/
 
 [fullstorydev/grpcui](https://github.com/fullstorydev/grpcui)
 
-## Lerna
+## TypeScript
+
+To generate TypeScript types i am using [grpc-web](https://github.com/grpc/grpc-web) plugin.
+At time of writing this, TypeScript support is experimental.
+
+### Lerna
 
 Create personal access token
 
 https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
 
-Create `~/.npmrc` (or at project level) file with Auth token
+Create `~/.npmrc` (or at project level) file with Auth token (DO NOT COMMIT AUTH TOKEN!!!)
 
 https://docs.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-npm-for-use-with-github-packages#authenticating-with-a-personal-access-token
 

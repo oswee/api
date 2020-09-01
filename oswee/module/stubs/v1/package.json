@@ -2,7 +2,7 @@
   "private": false,
   "name": "@dzintars/npm-test-pkg",
   "description": "Testing NPM publishing",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Dzintars Klavins",
   "homepage": "https://github.com/oswee/api/tree/master/oswee/module/stubs/v1#readme",
   "license": "MIT",

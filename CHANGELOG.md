@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.10](https://github.com/oswee/api/compare/v0.0.9...v0.0.10) (2020-09-02)
+
+
+### Bug Fixes
+
+* **modules:** add ids field ([77597b4](https://github.com/oswee/api/commit/77597b4dfa9ac065968a02ba55f8628f3f9cc2e2))
+
+
+
+
+
 ## [0.0.9](https://github.com/oswee/api/compare/v0.0.8...v0.0.9) (2020-09-01)
 
 

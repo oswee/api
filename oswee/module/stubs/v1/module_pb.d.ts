@@ -47,10 +47,13 @@ export namespace ListModulesRequest {
 }
 
 export class ListModulesResponse extends jspb.Message {
-  getModulesList(): Array<Module>;
-  setModulesList(value: Array<Module>): ListModulesResponse;
-  clearModulesList(): ListModulesResponse;
-  addModules(value?: Module, index?: number): Module;
+  getEntitiesMap(): jspb.Map<string, Module>;
+  clearEntitiesMap(): ListModulesResponse;
+
+  getIdsList(): Array<string>;
+  setIdsList(value: Array<string>): ListModulesResponse;
+  clearIdsList(): ListModulesResponse;
+  addIds(value: string, index?: number): ListModulesResponse;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ListModulesResponse.AsObject;
@@ -62,7 +65,8 @@ export class ListModulesResponse extends jspb.Message {
 
 export namespace ListModulesResponse {
   export type AsObject = {
-    modulesList: Array<Module.AsObject>,
+    entitiesMap: Array<[string, Module.AsObject]>,
+    idsList: Array<string>,
   }
 }
 

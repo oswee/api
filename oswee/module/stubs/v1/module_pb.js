@@ -427,7 +427,7 @@ proto.oswee.module.v1.ListModulesRequest.prototype.setParent = function(value) {
  * @private {!Array<number>}
  * @const
  */
-proto.oswee.module.v1.ListModulesResponse.repeatedFields_ = [1];
+proto.oswee.module.v1.ListModulesResponse.repeatedFields_ = [2];
 
 
 
@@ -460,8 +460,8 @@ proto.oswee.module.v1.ListModulesResponse.prototype.toObject = function(opt_incl
  */
 proto.oswee.module.v1.ListModulesResponse.toObject = function(includeInstance, msg) {
   var f, obj = {
-    modulesList: jspb.Message.toObjectList(msg.getModulesList(),
-    proto.oswee.module.v1.Module.toObject, includeInstance)
+    entitiesMap: (f = msg.getEntitiesMap()) ? f.toObject(includeInstance, proto.oswee.module.v1.Module.toObject) : [],
+    idsList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
   };
 
   if (includeInstance) {
@@ -499,9 +499,14 @@ proto.oswee.module.v1.ListModulesResponse.deserializeBinaryFromReader = function
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = new proto.oswee.module.v1.Module;
-      reader.readMessage(value,proto.oswee.module.v1.Module.deserializeBinaryFromReader);
-      msg.addModules(value);
+      var value = msg.getEntitiesMap();
+      reader.readMessage(value, function(message, reader) {
+        jspb.Map.deserializeBinary(message, reader, jspb.BinaryReader.prototype.readString, jspb.BinaryReader.prototype.readMessage, proto.oswee.module.v1.Module.deserializeBinaryFromReader, "", new proto.oswee.module.v1.Module());
+         });
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addIds(value);
       break;
     default:
       reader.skipField();
@@ -532,43 +537,67 @@ proto.oswee.module.v1.ListModulesResponse.prototype.serializeBinary = function()
  */
 proto.oswee.module.v1.ListModulesResponse.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getModulesList();
+  f = message.getEntitiesMap(true);
+  if (f && f.getLength() > 0) {
+    f.serializeBinary(1, writer, jspb.BinaryWriter.prototype.writeString, jspb.BinaryWriter.prototype.writeMessage, proto.oswee.module.v1.Module.serializeBinaryToWriter);
+  }
+  f = message.getIdsList();
   if (f.length > 0) {
-    writer.writeRepeatedMessage(
-      1,
-      f,
-      proto.oswee.module.v1.Module.serializeBinaryToWriter
+    writer.writeRepeatedString(
+      2,
+      f
     );
   }
 };
 
 
 /**
- * repeated Module modules = 1;
- * @return {!Array<!proto.oswee.module.v1.Module>}
+ * map<string, Module> entities = 1;
+ * @param {boolean=} opt_noLazyCreate Do not create the map if
+ * empty, instead returning `undefined`
+ * @return {!jspb.Map<string,!proto.oswee.module.v1.Module>}
  */
-proto.oswee.module.v1.ListModulesResponse.prototype.getModulesList = function() {
-  return /** @type{!Array<!proto.oswee.module.v1.Module>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.oswee.module.v1.Module, 1));
+proto.oswee.module.v1.ListModulesResponse.prototype.getEntitiesMap = function(opt_noLazyCreate) {
+  return /** @type {!jspb.Map<string,!proto.oswee.module.v1.Module>} */ (
+      jspb.Message.getMapField(this, 1, opt_noLazyCreate,
+      proto.oswee.module.v1.Module));
 };
 
 
 /**
- * @param {!Array<!proto.oswee.module.v1.Module>} value
+ * Clears values from the map. The map will be non-null.
  * @return {!proto.oswee.module.v1.ListModulesResponse} returns this
-*/
-proto.oswee.module.v1.ListModulesResponse.prototype.setModulesList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+ */
+proto.oswee.module.v1.ListModulesResponse.prototype.clearEntitiesMap = function() {
+  this.getEntitiesMap().clear();
+  return this;};
+
+
+/**
+ * repeated string ids = 2;
+ * @return {!Array<string>}
+ */
+proto.oswee.module.v1.ListModulesResponse.prototype.getIdsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
 };
 
 
 /**
- * @param {!proto.oswee.module.v1.Module=} opt_value
- * @param {number=} opt_index
- * @return {!proto.oswee.module.v1.Module}
+ * @param {!Array<string>} value
+ * @return {!proto.oswee.module.v1.ListModulesResponse} returns this
  */
-proto.oswee.module.v1.ListModulesResponse.prototype.addModules = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.oswee.module.v1.Module, opt_index);
+proto.oswee.module.v1.ListModulesResponse.prototype.setIdsList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.oswee.module.v1.ListModulesResponse} returns this
+ */
+proto.oswee.module.v1.ListModulesResponse.prototype.addIds = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
 };
 
 
@@ -576,8 +605,8 @@ proto.oswee.module.v1.ListModulesResponse.prototype.addModules = function(opt_va
  * Clears the list making it empty but non-null.
  * @return {!proto.oswee.module.v1.ListModulesResponse} returns this
  */
-proto.oswee.module.v1.ListModulesResponse.prototype.clearModulesList = function() {
-  return this.setModulesList([]);
+proto.oswee.module.v1.ListModulesResponse.prototype.clearIdsList = function() {
+  return this.setIdsList([]);
 };
 
 

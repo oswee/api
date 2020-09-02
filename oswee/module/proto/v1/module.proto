@@ -7,10 +7,6 @@ option go_package = "oswee/module/stubs/v1";
 // import "protoc-gen-swagger/options/annotations.proto";
 // import "google/protobuf/timestamp.proto";
 
-// type ListModulesRequestPayload struct {
-// 	ID string `json:"id,omitempty"`
-// }
-
 message Module {
 	// option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
   //   json_schema: {
@@ -29,7 +25,8 @@ message ListModulesRequest {
 }
 
 message ListModulesResponse {
-  repeated Module modules = 1;
+  map<string, Module> entities = 1;
+  repeated string ids = 2;
 }
 
 message Envelope {

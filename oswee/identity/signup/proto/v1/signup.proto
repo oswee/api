@@ -10,11 +10,11 @@ import "google/protobuf/timestamp.proto";
 // Incomming Signup request body
 message Signup {
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-        json_schema: {
-            title: "Signup"
-            description: "Define a SignUp structure"
-            required: ["email", "password", "display_name"]
-        }
+    json_schema: {
+      title: "Signup"
+      description: "Define a SignUp structure"
+      required: ["email", "password", "display_name"]
+    }
 	};
 	string email = 1;
 	string password = 2;
@@ -22,18 +22,18 @@ message Signup {
 }
 
 message SignupEntity {
-    bytes uuid = 1;
-    string email = 2;
+  bytes uuid = 1;
+  string email = 2;
 	string password = 3;
-    string display_name = 4;
-    SignupEntityStatus status = 5;
-    google.protobuf.Timestamp status_time = 6;
-    google.protobuf.Timestamp create_time = 7;
+  string display_name = 4;
+  SignupEntityStatus status = 5;
+  google.protobuf.Timestamp status_time = 6;
+  google.protobuf.Timestamp create_time = 7;
 }
 
 enum SignupEntityStatus {
-    SIGNUP_ENTITY_STATUS_INVALID = 0;
-    SIGNUP_ENTITY_STATUS_UNSET = 1;
-    SIGNUP_ENTITY_STATUS_VALID = 2;
-    SIGNUP_ENTITY_STATUS_REJECTED = 3;
+  SIGNUP_ENTITY_STATUS_INVALID = 0;
+  SIGNUP_ENTITY_STATUS_UNSET = 1;
+  SIGNUP_ENTITY_STATUS_VALID = 2;
+  SIGNUP_ENTITY_STATUS_REJECTED = 3;
 }

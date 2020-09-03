@@ -21,10 +21,10 @@ Set up GOPATH in `~/.zshrc` or `~/bashrc`
 `source $HOME/.zshrc`
 
 ```sh
-  1 export GOROOT=/usr/local/go
-  2 export GOPATH=$HOME/go
-  3 export GOBIN=$GOPATH/bin
-  4 export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOROOT:$GOPATH:$GOBIN
 ```
 
 In order to compile protobufs, `/usr/local/include` should be populated with [protocolbuffers/protobuf](https://github.com/protocolbuffers/protobuf/releases/download/v3.9.1/protoc-3.9.1-linux-x86_64.zip).
@@ -40,7 +40,7 @@ go get -u github.com/grpc-ecosystem/grpc-gateway/protoc-gen-swagger
 
 By default `go get` installs all packages in `$GOPATH`. If that is not specified then in `$HOME/go`.
 
-Copy content of `%GOPATH%/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google` folder to `/usr/local/include/google` folder.
+Copy content of ``%GOPATH%/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google`` folder to `/usr/local/include/google` folder.
 
 `cp $GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/google usr/local/include/google`
 

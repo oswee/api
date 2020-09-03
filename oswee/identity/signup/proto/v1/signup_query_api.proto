@@ -63,12 +63,12 @@ service SignupQueryAPI {
 		}
 	};
 
-    rpc ListSignups(ListSignupsRequest) returns (ListSignupsResponse){
+  rpc ListSignups(ListSignupsRequest) returns (ListSignupsResponse){
 		option (google.api.http) = {
 			get: "/v1/signup"
 		};
 	}
-    rpc GetSignup(GetSignupRequest) returns (google.protobuf.Empty){
+  rpc GetSignup(GetSignupRequest) returns (google.protobuf.Empty){
 		option (google.api.http) = {
 			get: "/v1/signup/{id}"
 		};
@@ -77,11 +77,11 @@ service SignupQueryAPI {
 
 message ListSignupsRequest {
 	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_schema) = {
-        json_schema: {
-            title: "List Request"
-            description: "Will return all Signups"
-            required: ["api"]
-        }
+    json_schema: {
+      title: "List Request"
+      description: "Will return all Signups"
+      required: ["api"]
+    }
 	};
 
 	string api = 1;

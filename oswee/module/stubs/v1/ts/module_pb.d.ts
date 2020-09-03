@@ -1,5 +1,7 @@
 import * as jspb from 'google-protobuf'
 
+import * as protoc$gen$swagger_options_annotations_pb from './protoc-gen-swagger/options/annotations_pb';
+import * as google_api_annotations_pb from './google/api/annotations_pb';
 
 
 export class Module extends jspb.Message {
@@ -67,40 +69,6 @@ export namespace ListModulesResponse {
   export type AsObject = {
     entitiesMap: Array<[string, Module.AsObject]>,
     idsList: Array<string>,
-  }
-}
-
-export class Envelope extends jspb.Message {
-  getA(): ListModulesRequest | undefined;
-  setA(value?: ListModulesRequest): Envelope;
-  hasA(): boolean;
-  clearA(): Envelope;
-
-  getB(): ListModulesResponse | undefined;
-  setB(value?: ListModulesResponse): Envelope;
-  hasB(): boolean;
-  clearB(): Envelope;
-
-  getKindCase(): Envelope.KindCase;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): Envelope.AsObject;
-  static toObject(includeInstance: boolean, msg: Envelope): Envelope.AsObject;
-  static serializeBinaryToWriter(message: Envelope, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): Envelope;
-  static deserializeBinaryFromReader(message: Envelope, reader: jspb.BinaryReader): Envelope;
-}
-
-export namespace Envelope {
-  export type AsObject = {
-    a?: ListModulesRequest.AsObject,
-    b?: ListModulesResponse.AsObject,
-  }
-
-  export enum KindCase { 
-    KIND_NOT_SET = 0,
-    A = 1,
-    B = 2,
   }
 }
 

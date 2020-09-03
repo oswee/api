@@ -1,6 +1,6 @@
 {
   "packages": [
-    "oswee/module/stubs/*"
+    "oswee/module/stubs/*/*"
   ],
   "npmClient": "yarn",
   "useWorkspaces": true,

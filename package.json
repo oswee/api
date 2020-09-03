@@ -2,7 +2,7 @@
   "name": "api",
   "private": true,
   "workspaces": [
-    "oswee/module/stubs/*"
+    "oswee/module/stubs/*/*"
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",

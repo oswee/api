@@ -1,6 +1,7 @@
 # Oswee API
 
 [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+[![lerna](https://img.shields.io/badge/build%20with-bazel-43A047.svg)](https://bazel.build/)
 
 ## Important rules
 

@@ -10,8 +10,8 @@ import "google/api/annotations.proto";
 
 option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	info: {
-		title: "Oswee Signup API";
-		version: "1.0.0";
+		title: "Oswee Modules API";
+		version: "0.0.11";
 		description: "The greatest API ever!";
 		contact: {
 			name: "Oswee";
@@ -30,7 +30,7 @@ option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
 	host: "api.oswee.com";
 	schemes: HTTPS;
 	schemes: WSS;
-    consumes: "application/json";
+  consumes: "application/json";
 	produces: "application/json";
 	responses: {
 		key: "403";
@@ -62,7 +62,7 @@ service ModulesService {
 
   rpc ListModules(ListModulesRequest) returns (ListModulesResponse){
 		option (google.api.http) = {
-			get: "/v1/signup"
+			get: "/v1/modules"
 		};
 	}
 }

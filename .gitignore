@@ -17,11 +17,14 @@ dist/
 *.swp
 
 # dependencies from JS package managers
+build
 node_modules/
 bower_components/
 
 # IDE specific (Visual Studio Code)
 # .vscode
+
+bazel-*
 
 
 # STUFF BELOW TAKEN FROM https://gist.github.com/octocat/9257657
@@ -34,8 +37,10 @@ bower_components/
 *.class
 *.dll
 *.exe
+*.exe~
 *.o
 *.so
+*.dylib
 
 # Packages #
 ############

@@ -1,5 +1,6 @@
 syntax = "proto3";
-package oswee.event.v1;
+package oswee.core.event.v1;
+
 
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/empty.proto";

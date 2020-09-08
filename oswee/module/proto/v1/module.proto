@@ -1,65 +1,13 @@
 syntax = "proto3";
+
 package oswee.module.v1;
 
-option go_package = "oswee/module/stubs/v1";
+option go_package = "github.com/oswee/api/oswee/module/stubs/v1;module";
 
-// import "protoc-gen-swagger/options/openapiv2.proto";
-import "protoc-gen-swagger/options/annotations.proto";
 // import "google/protobuf/timestamp.proto";
 import "google/api/annotations.proto";
 
-option (grpc.gateway.protoc_gen_swagger.options.openapiv2_swagger) = {
-	info: {
-		title: "Oswee Modules API";
-		version: "0.0.11";
-		description: "The greatest API ever!";
-		contact: {
-			name: "Oswee";
-			url: "https://github.com/oswee";
-			email: "dzintars.klavins@gmail.com";
-		};
-		license: {
-			name: "BSD 3-Clause License";
-			url: "https://github.com/oswee/api/blob/master/LICENSE.txt";
-		};
-	};
-	external_docs: {
-		url: "https://github.com/oswee/api";
-		description: "More about Oswee";
-	};
-	host: "api.oswee.com";
-	schemes: HTTPS;
-	schemes: WSS;
-  consumes: "application/json";
-	produces: "application/json";
-	responses: {
-		key: "403";
-		value: {
-			description: "Returned when the user does not have permission to access the resource.";
-		}
-	}
-    responses: {
-		key: "404";
-		value: {
-			description: "Returned when the resource does not exist.";
-			schema: {
-				json_schema: {
-					type: STRING;
-				}
-			}
-		}
-	};
-};
-
-service ModulesService {
-	option (grpc.gateway.protoc_gen_swagger.options.openapiv2_tag) = {
-		description: "ABitOfEverythingService description -- which should not be used in place of the documentation comment!"
-		external_docs: {
-			url: "https://github.com/grpc-ecosystem/grpc-gateway";
-			description: "Find out more about EchoService";
-		}
-	};
-
+service ModuleService {
   rpc ListModules(ListModulesRequest) returns (ListModulesResponse){
 		option (google.api.http) = {
 			get: "/v1/modules"
@@ -70,7 +18,7 @@ service ModulesService {
 message Module {
 	string id = 1;
 	string title = 2;
-  string permalink = 3;
+  string permalink = 4;
 }
 
 message ListModulesRequest {
@@ -82,9 +30,9 @@ message ListModulesResponse {
   repeated string ids = 2;
 }
 
-// message Envelope {
-//   oneof kind {
-//     ListModulesRequest a = 1;
-//     ListModulesResponse b = 2;
-//   }
-// }
+message Envelope {
+  oneof kind {
+    ListModulesRequest a = 1;
+    ListModulesResponse b = 2;
+  }
+}

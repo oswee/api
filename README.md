@@ -49,6 +49,8 @@ Copy `annotations.proto` and `openapiv2.proto` files from `%GOPATH%/src/github.c
 
 It should look like this:
 
+> :warning: **DEPRECATED**: All external annotations should be included in `./third_party/` directory.
+
 ```sh
 /usr/local/include
 ├── google
